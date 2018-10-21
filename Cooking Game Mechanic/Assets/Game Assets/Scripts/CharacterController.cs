@@ -12,8 +12,6 @@ public class CharacterController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Cursor.lockState = CursorLockMode.Locked;
-
-        Debug.Log(Vector3.up);
     }
 	
 	// Update is called once per frame
