@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PotController : MonoBehaviour {
 
     public Dictionary<string, int> contents;
     public PickUpBehaviour controller;
+    public GameObject textPrefab;
+
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +17,7 @@ public class PotController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+
 	}
 
     private void OnCollisionEnter(Collision collision)
@@ -32,7 +35,15 @@ public class PotController : MonoBehaviour {
                 contents.Add(name, 1);
             }
 
+            ShowItem(name);
+
             controller.DestroyPickup(collision.gameObject);
         }
+    }
+
+    private void ShowItem(string itemName)
+    {
+        GameObject tempObject = Instantiate(textPrefab, transform);
+        tempObject.GetComponent<PotTextBehaviour>().objectName = itemName;
     }
 }

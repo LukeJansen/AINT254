@@ -36,6 +36,7 @@ public class PickUpBehaviour : MonoBehaviour {
             else if (collision.tag == "Crate")
             {
                 pickUp = Instantiate(collision.GetComponent<CrateObject>().crateObject);
+                pickUp.name = pickUp.name.Replace("(Clone)", "");
                 holding = !holding;
             }
 
@@ -63,7 +64,7 @@ public class PickUpBehaviour : MonoBehaviour {
                     if (!holding) text.text = "Press \"E\" to Pickup " + collision.name;
                     break;
                 case ("Crate"):
-                    text.text = "Press \"E\" to Dispense " + collision.GetComponent<CrateObject>().name;
+                    text.text = "Press \"E\" to Dispense " + collision.GetComponent<CrateObject>().crateName;
                     break;
                 case ("Pot"):
                     text.text = "Press \"E\" to Clear Pot";
@@ -82,6 +83,11 @@ public class PickUpBehaviour : MonoBehaviour {
     {
         if (!holding) collision = other.gameObject;
         //Log(collision.tag);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        collision = other.gameObject;
     }
 
     private void OnTriggerExit(Collider other)

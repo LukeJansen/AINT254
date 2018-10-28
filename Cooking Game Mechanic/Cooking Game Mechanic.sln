@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cooking Game Mechanic", "Cooking Game Mechanic.csproj", "{2756FEE3-BBA0-2BB0-9705-F3A4FBA27A2E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cooking Game Mechanic.Plugins", "Cooking Game Mechanic.Plugins.csproj", "{5B4C94A4-7A38-A44D-F152-39528CF9721C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cooking Game Mechanic.Editor.Plugins", "Cooking Game Mechanic.Editor.Plugins.csproj", "{A45BBB43-1800-1BDD-FC5B-8C21A03908A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.PackageManagerUI.Editor", "Unity.PackageManagerUI.Editor.csproj", "{6877705C-FBD9-0C4F-5AFB-6FB431E5D39D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditor.StandardEvents", "UnityEditor.StandardEvents.csproj", "{6800202F-4402-D405-F8CB-03DC7BD78B92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cooking Game Mechanic.Editor", "Cooking Game Mechanic.Editor.csproj", "{3CDC439E-C75F-0496-CD12-3DA4B6347EEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,16 +29,15 @@ Global
 		{A45BBB43-1800-1BDD-FC5B-8C21A03908A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A45BBB43-1800-1BDD-FC5B-8C21A03908A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A45BBB43-1800-1BDD-FC5B-8C21A03908A2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6877705C-FBD9-0C4F-5AFB-6FB431E5D39D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6877705C-FBD9-0C4F-5AFB-6FB431E5D39D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6877705C-FBD9-0C4F-5AFB-6FB431E5D39D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6877705C-FBD9-0C4F-5AFB-6FB431E5D39D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6800202F-4402-D405-F8CB-03DC7BD78B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6800202F-4402-D405-F8CB-03DC7BD78B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6800202F-4402-D405-F8CB-03DC7BD78B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6800202F-4402-D405-F8CB-03DC7BD78B92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CDC439E-C75F-0496-CD12-3DA4B6347EEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CDC439E-C75F-0496-CD12-3DA4B6347EEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CDC439E-C75F-0496-CD12-3DA4B6347EEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CDC439E-C75F-0496-CD12-3DA4B6347EEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22BF88EF-1364-4DD0-8A35-FBE6AE071037}
 	EndGlobalSection
 EndGlobal

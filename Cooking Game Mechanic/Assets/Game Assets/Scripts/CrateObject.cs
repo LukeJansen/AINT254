@@ -5,6 +5,6 @@ using UnityEngine;
 public class CrateObject : MonoBehaviour {
 
     public GameObject crateObject;
-    public string name = "Object";
+    public string crateName = "Object";
 
 }
