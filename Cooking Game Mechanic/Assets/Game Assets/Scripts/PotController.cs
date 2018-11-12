@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class PotController : MonoBehaviour {
 
-    public Dictionary<string, int> contents;
+    public Transform cameraTransform;    
     public PickUpBehaviour controller;
     public GameObject textPrefab;
+    public GameObject potText;
+
+    private Dictionary<string, int> contents;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         contents = new Dictionary<string, int>();
 	}
 	
@@ -43,7 +46,7 @@ public class PotController : MonoBehaviour {
 
     private void ShowItem(string itemName)
     {
-        GameObject tempObject = Instantiate(textPrefab, transform);
-        tempObject.GetComponent<PotTextBehaviour>().objectName = itemName;
+        potText = Instantiate(textPrefab, transform);
+        potText.GetComponent<PotTextBehaviour>().objectName = itemName;
     }
 }

@@ -39,5 +39,6 @@ public class PlayerController : MonoBehaviour {
         mainTransform.position += (cameraTranform.forward * Input.GetAxis("Vertical")) * movementSmoothing;
         mainTransform.position += (cameraTranform.right * Input.GetAxis("Horizontal")) * movementSmoothing;
         mainTransform.position = new Vector3(mainTransform.position.x, 5, mainTransform.position.z);
+        GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
     }
 }

@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class PickUpBehaviour : MonoBehaviour {
 
     public Material cube, cubeSelected;
-    public Transform cameraTransform;
     public GameObject textObject;
+    public float interactDistance = 10f;
 
     private Text text;
+    private Ray ray;
+    private RaycastHit hit;
     private bool holding;
     private GameObject pickUp, collision;
     
@@ -24,6 +26,8 @@ public class PickUpBehaviour : MonoBehaviour {
 	void Update () {
 
         TextUpdate();
+
+        RayShoot();
 
         if (Input.GetKeyDown(KeyCode.E) && collision != null)
         {
@@ -44,7 +48,7 @@ public class PickUpBehaviour : MonoBehaviour {
 
         if (holding)
         {
-            pickUp.GetComponent<Transform>().position = transform.position + (cameraTransform.forward);
+            pickUp.GetComponent<Transform>().position = transform.position + (transform.forward * 3);
         }
         else
         {
@@ -79,20 +83,20 @@ public class PickUpBehaviour : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void RayShoot()
     {
-        if (!holding) collision = other.gameObject;
-        //Log(collision.tag);
-    }
+        ray = new Ray(transform.position, transform.forward);
 
-    private void OnTriggerStay(Collider other)
-    {
-        collision = other.gameObject;
-    }
+        Debug.DrawRay(transform.position, transform.forward * 4, Color.red, 0);
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (pickUp == null) collision = null;
+        if (Physics.Raycast(ray, out hit, interactDistance))
+        {
+            collision = hit.collider.gameObject;
+        }
+        else
+        {
+            collision = null;
+        }
     }
 
     public void DestroyPickup(GameObject collider)
