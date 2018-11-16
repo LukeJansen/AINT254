@@ -68,7 +68,7 @@ public class PickUpBehaviour : MonoBehaviour {
                     if (!holding) text.text = "Press \"E\" to Pickup " + collision.name;
                     break;
                 case ("Crate"):
-                    text.text = "Press \"E\" to Dispense " + collision.GetComponent<CrateObject>().crateName;
+                    text.text = "Press \"E\" to Dispense " + collision.GetComponent<CrateObject>().crateFood.name;
                     break;
                 case ("Pot"):
                     text.text = "Press \"E\" to Clear Pot";
