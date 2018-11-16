@@ -90,7 +90,7 @@ public class PotController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "PickUp")
+        if (!cooking && collision.gameObject.tag == "PickUp")
         {
             Food food = collision.gameObject.GetComponent<FoodBehaviour>().foodObject;
 

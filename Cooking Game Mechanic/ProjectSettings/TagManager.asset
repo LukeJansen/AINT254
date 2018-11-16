@@ -7,7 +7,6 @@ TagManager:
   - PickUp
   - Crate
   - Pot
-  - RecipeBook
   layers:
   - Default
   - TransparentFX

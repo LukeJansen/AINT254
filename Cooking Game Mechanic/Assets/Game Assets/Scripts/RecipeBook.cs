@@ -34,6 +34,9 @@ public class RecipeBook {
     {
         tempIngredients = new Dictionary<string, int> { { foodItems[0].name, 2 } };
         recipeItems.Add(new Recipe(tempIngredients, 10));
+
+        tempIngredients = new Dictionary<string, int> { { foodItems[1].name, 1 } };
+        recipeItems.Add(new Recipe(tempIngredients, 30));
     }
     
     public int RecipeCheck(Dictionary<string, int> potContents)
@@ -41,8 +44,10 @@ public class RecipeBook {
         for (int i = 0; i < recipeItems.Count; i++)
         {
             string name = new List<string>(recipeItems[i].ingredients.Keys)[0];
+            //Debug.Log("Recipe: " + new List<string>(recipeItems[i].ingredients.Keys)[0]);
+            //Debug.Log("Pot: " + new List<string>(potContents.Keys)[0]);
 
-            if (recipeItems[i].ingredients[name] == potContents[name])
+            if (potContents.ContainsKey(name) && recipeItems[i].ingredients[name] == potContents[name])
             {
                 return i;
             }

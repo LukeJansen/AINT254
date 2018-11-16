@@ -14,7 +14,7 @@ public class CrateObject : MonoBehaviour {
     {
         recipeBook = new RecipeBook();
 
-        crateFood = recipeBook.foodItems[0];
+        crateFood = recipeBook.foodItems[crateObject.GetComponent<FoodBehaviour>().foodIndex];
     }
 
 }
