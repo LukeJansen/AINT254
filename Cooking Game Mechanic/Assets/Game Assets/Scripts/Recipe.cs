@@ -7,14 +7,13 @@ namespace Assets.Game_Assets.Scripts
 {
     public class Recipe
     {
-        public Dictionary<Food, int> ingredients;
+        public Dictionary<string, int> ingredients;
         public int cookingTime;
 
-        public Recipe(Dictionary<Food, int> ingredients, int cookingTime)
+        public Recipe(Dictionary<string, int> ingredients, int cookingTime)
         {
             this.ingredients = ingredients;
             this.cookingTime = cookingTime;
         }
-
     }
 }

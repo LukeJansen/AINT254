@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class CrateObject : MonoBehaviour {
 
-    public RecipeBook recipeBook;
-
     public GameObject crateObject;
     public Food crateFood;
 
+    private RecipeBook recipeBook;
+
     private void Start()
     {
+        recipeBook = new RecipeBook();
+
         crateFood = recipeBook.foodItems[0];
     }
 

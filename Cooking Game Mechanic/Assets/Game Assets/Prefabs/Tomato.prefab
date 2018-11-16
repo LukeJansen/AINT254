@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23550954976676674}
   - component: {fileID: 65885507872720182}
   - component: {fileID: 54162623149492612}
+  - component: {fileID: 114648191629254948}
   m_Layer: 0
   m_Name: Tomato
   m_TagString: PickUp
@@ -112,3 +113,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114648191629254948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517726768273834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55712b61b67caeb44b7b88b7bb210002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeBook: {fileID: 0}
+  foodIndex: 0

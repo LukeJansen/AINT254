@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1598840677611888
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4688182399471534
 Transform:
   m_ObjectHideFlags: 1
@@ -177,14 +177,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 979396a643d843d408e8e4aa8476b997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 0}
   controller: {fileID: 0}
   textPrefab: {fileID: 1095299026522750, guid: 2bc2b25c20b4b1c479cb7a94cdeeda16, type: 2}
   potText: {fileID: 0}
-  CookingImage: {fileID: 114160398129601514}
-  CookingGood: {fileID: 21300000, guid: 415e05e1918c7964e80a4d51bdcdd99b, type: 3}
-  CookingBad: {fileID: 21300000, guid: 7147916c46358634381fbe487f6b363b, type: 3}
-  CookingBurnt: {fileID: 21300000, guid: 66aa4ed2beb7c244aa1fdbd0737f0a03, type: 3}
+  baseImage: {fileID: 1548057475874828}
+  cookingImage: {fileID: 1623132107822582}
+  cookingBase: {fileID: 21300000, guid: a46ddf6af35ef21448d18dfcf92b21d8, type: 3}
+  cookingGood: {fileID: 21300000, guid: 415e05e1918c7964e80a4d51bdcdd99b, type: 3}
+  cookingBad: {fileID: 21300000, guid: 7147916c46358634381fbe487f6b363b, type: 3}
+  cookingBurnt: {fileID: 21300000, guid: 66aa4ed2beb7c244aa1fdbd0737f0a03, type: 3}
 --- !u!114 &114070412190132252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,7 +227,7 @@ MonoBehaviour:
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 0
-  m_FillClockwise: 1
+  m_FillClockwise: 0
   m_FillOrigin: 2
 --- !u!114 &114293468969995326
 MonoBehaviour:

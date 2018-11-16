@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class FoodBehaviour : MonoBehaviour {
 
-    public RecipeBook recipeBook;
+
     public Food foodObject;
     public int foodIndex;
 
-	// Use this for initialization
-	void Start () {
-        recipeBook = GameObject.Find("FoodStore").GetComponent<RecipeBook>();
+    private RecipeBook recipeBook;
 
-        foodObject = recipeBook.foodItems[foodIndex];	
+    // Use this for initialization
+    void Start () {
+        recipeBook = new RecipeBook();
+
+        foodObject = recipeBook.foodItems[foodIndex];
 	}
 
 }
