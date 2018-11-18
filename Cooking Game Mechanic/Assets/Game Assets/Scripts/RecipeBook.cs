@@ -28,15 +28,18 @@ public class RecipeBook {
     {
         foodItems.Add(new Food("Tomato"));
         foodItems.Add(new Food("Beef"));
+        foodItems.Add(new Food("Tomato Soup"));
+        foodItems.Add(new Food("Cooked Beef"));
+        foodItems.Add(new Food("Burnt Food"));
     }
 
     void CreateRecipes()
     {
-        tempIngredients = new Dictionary<string, int> { { foodItems[0].name, 2 } };
-        recipeItems.Add(new Recipe(tempIngredients, 10));
+        tempIngredients = new Dictionary<string, int> { { foodItems[0].name, 1 } };
+        recipeItems.Add(new Recipe(tempIngredients, 2, 2));
 
         tempIngredients = new Dictionary<string, int> { { foodItems[1].name, 1 } };
-        recipeItems.Add(new Recipe(tempIngredients, 30));
+        recipeItems.Add(new Recipe(tempIngredients, 30, 3));
     }
     
     public int RecipeCheck(Dictionary<string, int> potContents)

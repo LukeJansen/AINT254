@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
     public Transform mainTransform;
     public Transform cameraTranform;
     
-    private float clampY = 40f;
+    private float clampY = 60f;
     private float rotX, rotY;
 
 

@@ -12,12 +12,13 @@ public class PotController : MonoBehaviour {
 
     public GameObject baseImage, cookingImage;
     public Sprite cookingBase, cookingGood, cookingBad, cookingBurnt;
+    public Recipe currentRecipe;
 
     private RecipeBook recipeBook;
     private Dictionary<string, int> contents;
     private Image baseImageComponent, cookingImageComponent;
     private bool cooking, empty;
-    private float currentRecipe, cookingTime, startTime;
+    private float cookingTime, startTime;
         
     // Use this for initialization
     void Start () {
@@ -47,7 +48,7 @@ public class PotController : MonoBehaviour {
             if (result != 100)
             {
                 cooking = true;
-                currentRecipe = result;
+                currentRecipe = recipeBook.recipeItems[result];
                 cookingTime = recipeBook.recipeItems[result].cookingTime;
                 startTime = Time.time;
             }
@@ -114,5 +115,26 @@ public class PotController : MonoBehaviour {
     {
         potText = Instantiate(textPrefab, transform);
         potText.GetComponent<PotTextBehaviour>().objectName = itemName;
+    }
+
+    public void Clear()
+    {
+        cooking = false;
+        empty = true;
+        currentRecipe = null;
+        contents = new Dictionary<string, int>();
+    }
+
+    public bool Cooking
+    {
+        get
+        {
+            return cooking;
+        }
+    }
+
+    public float GetCookingTime()
+    {
+        return (Time.time - startTime) / cookingTime;
     }
 }

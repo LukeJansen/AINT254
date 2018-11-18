@@ -6,20 +6,23 @@ using UnityEngine.UI;
 public class PickUpBehaviour : MonoBehaviour {
 
     public Material cube, cubeSelected;
-    public GameObject textObject;
+    public GameObject textObject, mealPrefab;
     public float interactDistance = 10f;
+    public GameObject[] meals;
 
     private Text text;
     private Ray ray;
     private RaycastHit hit;
     private bool holding;
     private GameObject pickUp, collision;
+    private RecipeBook recipeBook;
     
 
 	// Use this for initialization
 	void Start () {
         holding = false;
         text = textObject.GetComponent<Text>();
+        recipeBook = new RecipeBook();
 	}
 	
 	// Update is called once per frame
@@ -42,6 +45,21 @@ public class PickUpBehaviour : MonoBehaviour {
                 pickUp = Instantiate(collision.GetComponent<CrateObject>().crateObject);
                 pickUp.name = pickUp.name.Replace("(Clone)", "");
                 holding = !holding;
+            }
+            else if (collision.tag == "Pot")
+            {
+                PotController controller = collision.GetComponent<PotController>();
+
+                int index = controller.currentRecipe.meal;
+                int state = Mathf.FloorToInt(controller.GetCookingTime());
+
+                mealPrefab = meals[index - ((recipeBook.foodItems.Count - 1) /2)];
+
+                pickUp = Instantiate(mealPrefab);
+                pickUp.GetComponent<MealBehaviour>().SetMealBehaviour(index, state);
+                holding = !holding;
+
+                controller.Clear();
             }
 
         }
@@ -71,7 +89,34 @@ public class PickUpBehaviour : MonoBehaviour {
                     text.text = "Press \"E\" to Dispense " + collision.GetComponent<CrateObject>().crateFood.name;
                     break;
                 case ("Pot"):
-                    text.text = "Press \"E\" to Clear Pot";
+                    PotController controller = collision.GetComponent<PotController>();
+                    if (controller.Cooking)
+                    {
+                        string message = "Press \"E\" to Collect ";
+
+                        if (controller.GetCookingTime() <= 1)
+                        {
+                            message += recipeBook.foodItems[controller.currentRecipe.meal].name + " (Under Cooked)";
+                        }
+                        else if (controller.GetCookingTime() <= 2)
+                        {
+                            message += recipeBook.foodItems[controller.currentRecipe.meal].name + " (Cooked)";
+                        }
+                        else if (controller.GetCookingTime() <= 3)
+                        {
+                            message += recipeBook.foodItems[controller.currentRecipe.meal].name + " (Over Cooked)";
+                        }
+                        else
+                        {
+                            message += "Burnt Food";
+                        }
+                        
+                        text.text = message;
+                    }
+                    else
+                    {
+                        text.text = "Empty Pot! Add Ingredients.";
+                    }
                     break;
             }        
 
