@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PotController : MonoBehaviour {
    
-    public PickUpBehaviour controller;
+    public InteractBehaviour controller;
     public GameObject textPrefab;
     public GameObject potText;
 
@@ -27,7 +27,7 @@ public class PotController : MonoBehaviour {
 
         contents = new Dictionary<string, int>();
         
-        controller = Camera.main.GetComponent<PickUpBehaviour>();
+        controller = Camera.main.GetComponent<InteractBehaviour>();
         baseImageComponent = baseImage.GetComponent<Image>();
         cookingImageComponent = cookingImage.GetComponent<Image>();
         recipeBook = new RecipeBook();

@@ -7,11 +7,15 @@ public class RecipeBook {
 
     public List<Food> foodItems;
     public List<Recipe> recipeItems;
+    public int foodCount, mealCount;
 
     private Dictionary<string, int> tempIngredients;
 
     public RecipeBook()
     {
+        foodCount = 2;
+        mealCount = 3;
+
         SetUp();
     }
 

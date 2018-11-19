@@ -127,5 +127,5 @@ MonoBehaviour:
   foodIndex: 3
   under: {r: 0, g: 0, b: 0, a: 0}
   good: {r: 0, g: 0, b: 0, a: 0}
-  bad: {r: 0, g: 0, b: 0, a: 0}
+  bad: {r: 1, g: 0.4784314, b: 0, a: 1}
   burnt: {r: 0, g: 0, b: 0, a: 0}

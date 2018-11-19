@@ -7,18 +7,19 @@ public class MealBehaviour : MonoBehaviour {
 
     public int foodIndex;
     public Color under, good, bad, burnt;
+    public Food food;
     
     private RecipeBook recipeBook;
-    private Food food;
     private int state;
 
 	void Start () {
 
         under = new Color(0.66f, 0.66f, 0.66f);
         good = new Color(0, 0.66f, 0);
-        bad = new Color(0.66f, 0.43f, 0);
+        bad = new Color(1f, 0.5f, 0);
         burnt = new Color(0.66f, 0, 0);
 
+        food = recipeBook.foodItems[foodIndex];
     }
 	
     public void SetMealBehaviour(int foodIndex, int state)
