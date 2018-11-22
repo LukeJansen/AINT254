@@ -6,11 +6,11 @@ using UnityEngine;
 public class MealBehaviour : MonoBehaviour {
 
     public int foodIndex;
+    public int state;
     public Color under, good, bad, burnt;
     public Food food;
     
     private RecipeBook recipeBook;
-    private int state;
 
 	void Start () {
 
