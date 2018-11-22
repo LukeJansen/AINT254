@@ -290,10 +290,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Cooking Game Mechanic.Plugins.csproj">
-      <Project>{5B4C94A4-7A38-A44D-F152-39528CF9721C}</Project>
-      <Name>Cooking Game Mechanic.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.StandardEvents.csproj">
       <Project>{6800202F-4402-D405-F8CB-03DC7BD78B92}</Project>
       <Name>UnityEditor.StandardEvents</Name>
@@ -307,16 +303,17 @@
     <Compile Include="Assets\Game Assets\Scripts\CrateObject.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Food.cs" />
     <Compile Include="Assets\Game Assets\Scripts\FoodBehaviour.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\InteractBehaviour.cs" />
     <Compile Include="Assets\Game Assets\Scripts\MealBehaviour.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\PickUpBehaviour.cs" />
     <Compile Include="Assets\Game Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Game Assets\Scripts\PotController.cs" />
     <Compile Include="Assets\Game Assets\Scripts\PotTextBehaviour.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Recipe.cs" />
     <Compile Include="Assets\Game Assets\Scripts\RecipeBook.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Request.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\ServingBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
     <None Include="C:\Users\lpjan\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="C:\Users\lpjan\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Light.uss" />
