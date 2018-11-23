@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InteractBehaviour : MonoBehaviour {
@@ -64,6 +65,10 @@ public class InteractBehaviour : MonoBehaviour {
 
                 controller.Clear();
             }
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
         }
         
         if (holding)

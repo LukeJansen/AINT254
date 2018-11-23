@@ -14,7 +14,7 @@ public class ServingBehaviour : MonoBehaviour {
     private int orderLimit;
     private List<Request> currentOrders;
     private System.Random random;
-    private float lastTime;
+    private float startTime, lastTime;
 
 
 	// Use this for initialization
@@ -22,12 +22,17 @@ public class ServingBehaviour : MonoBehaviour {
         recipeBook = new RecipeBook();
         currentOrders = new List<Request>();
         random = new System.Random();
+        startTime = Time.time;
         lastTime = Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        orderLimit = Mathf.FloorToInt(Time.time / 45f) + 1;
+        if ((Time.time - startTime) > 5)
+        {
+            orderLimit = Mathf.FloorToInt(((Time.time - startTime) - 5) / 45f) + 1;
+        }
+        else orderLimit = 0;
 
         ManageOrders();
         ManageTime();

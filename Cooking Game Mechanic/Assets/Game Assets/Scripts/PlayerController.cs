@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         Vector3 rot = cameraTranform.localRotation.eulerAngles;
         rotX = rot.x;
         rotY = rot.y;

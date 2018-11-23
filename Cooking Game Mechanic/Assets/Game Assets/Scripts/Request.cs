@@ -50,7 +50,7 @@ public class Request : ScriptableObject{
     {
         Color color;
 
-        if (timeLeft > 0)
+        if (timeLeft > 0 && !served)
         {
             timeLeft -= 0.1f;
 

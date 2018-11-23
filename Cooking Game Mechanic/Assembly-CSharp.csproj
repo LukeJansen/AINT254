@@ -65,6 +65,7 @@
     <Compile Include="Assets\Game Assets\Scripts\Food.cs" />
     <Compile Include="Assets\Game Assets\Scripts\FoodBehaviour.cs" />
     <Compile Include="Assets\Game Assets\Scripts\InteractBehaviour.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\MainMenuController.cs" />
     <Compile Include="Assets\Game Assets\Scripts\MealBehaviour.cs" />
     <Compile Include="Assets\Game Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Game Assets\Scripts\PotController.cs" />
