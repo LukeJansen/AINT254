@@ -16,10 +16,9 @@ public class ScoreboardBehaviour : MonoBehaviour {
 
     public void AddScore(int state)
     {
-        if (state == 0 || state == 2) score += 1;
+        if (state == 0 || state == 2) score -= 1;
         if (state == 1) score += 3;
         if (state == 3) score -= 3;
-        if (state == 4) score -= 5;
 
         text.text = "Score: " + score;
     }

@@ -40,10 +40,10 @@ public class RecipeBook {
     void CreateRecipes()
     {
         tempIngredients = new Dictionary<string, int> { { foodItems[0].name, 1 } };
-        recipeItems.Add(new Recipe(tempIngredients, 15, 2));
+        recipeItems.Add(new Recipe(tempIngredients, 10, 2));
 
         tempIngredients = new Dictionary<string, int> { { foodItems[1].name, 1 } };
-        recipeItems.Add(new Recipe(tempIngredients, 30, 3));
+        recipeItems.Add(new Recipe(tempIngredients, 15, 3));
     }
     
     public int RecipeCheck(Dictionary<string, int> potContents)

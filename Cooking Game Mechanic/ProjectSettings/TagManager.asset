@@ -8,6 +8,7 @@ TagManager:
   - Crate
   - Pot
   - ServingTable
+  - Bin
   layers:
   - Default
   - TransparentFX

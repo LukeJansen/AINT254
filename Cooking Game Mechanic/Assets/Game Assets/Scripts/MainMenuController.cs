@@ -7,15 +7,18 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour {
 
     public GameObject settingsPanel;
-    public Slider volumeSlider;
+    public Slider volumeSlider, mouseSlider;
+    public DataHolder data;
+
 
     private bool settingsOpen;
-    private float volume;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        data = GameObject.Find("Data").GetComponent<DataHolder>();
     }
 
     public void PlayButton()
@@ -26,13 +29,20 @@ public class MainMenuController : MonoBehaviour {
     public void SettingsButton()
     {
         settingsOpen = true;
+
+        volumeSlider.value = data.Volume;
+        mouseSlider.value = data.Mouse;
+
         settingsPanel.SetActive(true);
     }
 
     public void CloseSettingsButton()
     {
         settingsOpen = false;
-        volume = volumeSlider.value;
+
+        data.Volume = volumeSlider.value;
+        data.Mouse = mouseSlider.value;
+        
         settingsPanel.SetActive(false);
     }
 

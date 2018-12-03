@@ -61,7 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Game Assets\Scripts\BinBehaviour.cs" />
     <Compile Include="Assets\Game Assets\Scripts\CrateObject.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\DataHolder.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Food.cs" />
     <Compile Include="Assets\Game Assets\Scripts\FoodBehaviour.cs" />
     <Compile Include="Assets\Game Assets\Scripts\InteractBehaviour.cs" />

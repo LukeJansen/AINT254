@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    private DataHolder data;
+
     public float movementSmoothing = 0.3f;
-    public float mouseSmoothing = 100f;
+    public float mouseSmoothing;
 
     public Transform mainTransform;
     public Transform cameraTranform;
@@ -18,9 +20,14 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
         Vector3 rot = cameraTranform.localRotation.eulerAngles;
         rotX = rot.x;
         rotY = rot.y;
+
+        data = GameObject.Find("Data").GetComponent<DataHolder>();
+
+        mouseSmoothing = data.Mouse;
     }
 	
 	// Update is called once per frame

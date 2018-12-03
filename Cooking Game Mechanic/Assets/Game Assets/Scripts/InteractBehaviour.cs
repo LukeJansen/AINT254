@@ -126,7 +126,10 @@ public class InteractBehaviour : MonoBehaviour {
                     }
                     break;
                 case ("ServingTable"):
-                    text.text = "";
+                    text.text = "Drop Item onto Serving Table to Serve.";
+                    break;
+                case ("Bin"):
+                    text.text = "Drop Item in Bin to Destroy";
                     break;
             }        
 
