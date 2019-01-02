@@ -66,10 +66,10 @@ public class InteractBehaviour : MonoBehaviour {
                 controller.Clear();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(0);
-        }
+        //else if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    SceneManager.LoadScene(0);
+        //}
         
         if (holding)
         {

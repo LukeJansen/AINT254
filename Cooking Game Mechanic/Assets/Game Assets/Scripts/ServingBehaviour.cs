@@ -9,10 +9,11 @@ public class ServingBehaviour : MonoBehaviour {
     public GameObject uiPrefab;
     public RectTransform canvas;
     public ScoreboardBehaviour scoreText;
+    public int tableNumber;
 
     private RecipeBook recipeBook;
     private int orderLimit;
-    private List<Request> currentOrders;
+    private Request currentOrder;
     private System.Random random;
     private float startTime, lastTime;
 
@@ -20,7 +21,6 @@ public class ServingBehaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         recipeBook = new RecipeBook();
-        currentOrders = new List<Request>();
         random = new System.Random();
         startTime = Time.time;
         lastTime = Time.time;
@@ -34,41 +34,39 @@ public class ServingBehaviour : MonoBehaviour {
         }
         else orderLimit = 0;
 
+        
         ManageOrders();
-        ManageTime();
+        if (currentOrder != null)
+        {
+            currentOrder.Update();
+            ManageTime();
+        }
 	}
 
     private void ManageOrders()
     {
-        if (currentOrders.Count < orderLimit)
+        if (Time.time - startTime > ((45 * tableNumber) + 10 ) && currentOrder == null)
         {
-            currentOrders.Add(
+            currentOrder = 
                 new Request(recipeBook.recipeItems[random.Next(recipeBook.recipeItems.Count)],
-                random.Next(45, 60), Instantiate(uiPrefab, canvas), currentOrders.Count));            
+                random.Next(45, 60), Instantiate(uiPrefab, canvas));            
         }
 
-        foreach(Request request in currentOrders)
+
+        if (currentOrder != null && currentOrder.Finished)
         {
-            request.Index = currentOrders.IndexOf(request);
-            request.Update();
-
-            if (request.Finished)
-            {
-                if (request.Failed) scoreText.AddScore(4);
-                Destroy(request.RequestObject);
-                currentOrders.Remove(request);
-            }
+            if (currentOrder.Failed) scoreText.AddScore(4);
+            Destroy(currentOrder.RequestObject);
+            currentOrder = null;
         }
+        
     }
 
     private void ManageTime()
     {
         if (Time.time - lastTime >= 0.1)
         {
-            foreach (Request request in currentOrders)
-            {
-                request.TakeTime();
-            }
+            currentOrder.TakeTime();
 
             lastTime = Time.time;
         }
@@ -76,14 +74,12 @@ public class ServingBehaviour : MonoBehaviour {
 
     public void TakeMeal(MealBehaviour meal)
     {
-        foreach (Request request in currentOrders)
+
+        if (recipeBook.foodItems[currentOrder.Recipe.meal].name == meal.food.name)
         {
-            if (recipeBook.foodItems[request.Recipe.meal].name == meal.food.name)
-            {
-                scoreText.AddScore(meal.state);
-                request.FinishRequest();
-                return;
-            }
+            scoreText.AddScore(meal.state);
+            currentOrder.FinishRequest();
+            return;
         }
     }
 

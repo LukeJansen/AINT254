@@ -10,7 +10,6 @@ public class Request : ScriptableObject{
     private Recipe recipe;
     private float timeLeft;
     private int time;
-    private int index;
     private bool served, failed, finished;
 
     private GameObject requestObject;
@@ -20,22 +19,19 @@ public class Request : ScriptableObject{
     private Text foodText;
     private Text timeText;
 
-    public Request(Recipe recipe, int time, GameObject requestObject, int index)
+    public Request(Recipe recipe, int time, GameObject requestObject)
     {
         this.recipeBook = new RecipeBook();
         this.recipe = recipe;
         this.time = time;
         this.timeLeft = time;
         this.requestObject = requestObject;
-        this.index = index;
 
         SetUp();
     }
 
     private void SetUp()
     {
-        requestObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(-75 - (index * 125), 50, 0);
-
         timeLeftObject = requestObject.transform.Find("Time Left").GetComponent<Slider>();
         timeLeftColour = requestObject.transform.Find("Time Left").transform.Find("Fill Area").transform.Find("Fill").GetComponent<Image>();
         foodImage = requestObject.transform.Find("Food").GetComponent<Image>();
@@ -75,18 +71,17 @@ public class Request : ScriptableObject{
     public void Update()
     {
         RectTransform rectTransform = requestObject.GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = Vector3.Lerp(rectTransform.anchoredPosition, new Vector3(-75 - (index * 125), rectTransform.anchoredPosition.y, 0), Time.deltaTime * 1.25f);
 
         if (timeLeft <= 0)
         {
             failed = true;
             served = true;
         }
-
+        Debug.Log(rectTransform.localScale.x);
         if (served)
         {
-            requestObject.transform.Translate(new Vector3(0, 0.5f, 0));
-            if (requestObject.GetComponent<RectTransform>().anchoredPosition.y > 50)
+            rectTransform.localScale = rectTransform.localScale * 0.85f;
+            if (rectTransform.localScale.x < 0.001)
             {
                 Debug.Log("Finished");
                 finished = true;
@@ -94,9 +89,9 @@ public class Request : ScriptableObject{
         }
         else
         {
-            if (requestObject.GetComponent<RectTransform>().anchoredPosition.y > -50)
+            if (rectTransform.localScale.x < 0.025)
             {
-                requestObject.transform.Translate(new Vector3(0, -0.5f, 0));
+                rectTransform.localScale = rectTransform.localScale * 1.15f; ;
             }
         }
     }
@@ -119,14 +114,6 @@ public class Request : ScriptableObject{
         get
         {
             return requestObject;
-        }
-    }
-
-    public int Index
-    {
-        set
-        {
-            index = value;
         }
     }
 
