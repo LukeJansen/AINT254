@@ -111,7 +111,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.508, y: 0.50800014, z: 0.025400005}
+  m_Size: {x: 0.508, y: 0.50800014, z: 1}
   m_Center: {x: 0, y: -1.8047785e-16, z: 0.012700003}
 --- !u!114 &114353822819630976
 MonoBehaviour:
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodIndex: 3
+  state: 0
   under: {r: 0, g: 0, b: 0, a: 0}
   good: {r: 0, g: 0, b: 0, a: 0}
   bad: {r: 1, g: 0.4784314, b: 0, a: 1}

@@ -9,6 +9,7 @@ public class PotController : MonoBehaviour {
     public InteractBehaviour controller;
     public GameObject textPrefab;
     public GameObject potText;
+    public ParticleSystem particle;
 
     public GameObject baseImage, cookingImage;
     public Sprite cookingBase, cookingGood, cookingBad, cookingBurnt;
@@ -35,7 +36,6 @@ public class PotController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
         CookingUpdate();
         CookingImageUpdate();
 	}
@@ -52,6 +52,15 @@ public class PotController : MonoBehaviour {
                 cookingTime = recipeBook.recipeItems[result].cookingTime;
                 startTime = Time.time;
             }
+        }
+
+        if (Cooking)
+        {
+            if (!particle.isPlaying) particle.Play();
+        }
+        else
+        {
+            if (particle.isPlaying) particle.Stop();
         }
     }
 

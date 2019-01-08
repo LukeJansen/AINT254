@@ -77,7 +77,6 @@ public class Request : ScriptableObject{
             failed = true;
             served = true;
         }
-        Debug.Log(rectTransform.localScale.x);
         if (served)
         {
             rectTransform.localScale = rectTransform.localScale * 0.85f;

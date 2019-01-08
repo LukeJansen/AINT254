@@ -38,7 +38,11 @@ public class InteractBehaviour : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.E) && collision != null)
         {
-            if (collision.tag == "PickUp")
+            if (holding)
+            {
+                holding = !holding;
+            }
+            else if (collision.tag == "PickUp")
             {
                 pickUp = collision;
                 holding = !holding;
@@ -84,60 +88,68 @@ public class InteractBehaviour : MonoBehaviour {
 
     private void TextUpdate()
     {
-        if (collision != null && collision.tag != "Untagged")
+        if (holding)
         {
-            switch (collision.tag)
-            {
-                case ("PickUp"):
-                    if (holding) text.text = "Press \"E\" to Drop " + collision.name;
-                    if (!holding) text.text = "Press \"E\" to Pickup " + collision.name;
-                    break;
-                case ("Crate"):
-                    text.text = "Press \"E\" to Dispense " + collision.GetComponent<CrateObject>().crateFood.name;
-                    break;
-                case ("Pot"):
-                    PotController controller = collision.GetComponent<PotController>();
-                    if (controller.Cooking)
-                    {
-                        string message = "Press \"E\" to Collect ";
-
-                        if (controller.GetCookingTime() <= 1)
-                        {
-                            message += recipeBook.foodItems[controller.currentRecipe.meal].name + " (Under Cooked)";
-                        }
-                        else if (controller.GetCookingTime() <= 2)
-                        {
-                            message += recipeBook.foodItems[controller.currentRecipe.meal].name + " (Cooked)";
-                        }
-                        else if (controller.GetCookingTime() <= 3)
-                        {
-                            message += recipeBook.foodItems[controller.currentRecipe.meal].name + " (Over Cooked)";
-                        }
-                        else
-                        {
-                            message += "Burnt Food";
-                        }
-                        
-                        text.text = message;
-                    }
-                    else
-                    {
-                        text.text = "Empty Pot! Add Ingredients.";
-                    }
-                    break;
-                case ("ServingTable"):
-                    text.text = "Drop Item onto Serving Table to Serve.";
-                    break;
-                case ("Bin"):
-                    text.text = "Drop Item in Bin to Destroy";
-                    break;
-            }        
-
-            textObject.SetActive(true);
+            text.text = "Press \"E\" to Drop " + pickUp.name;
         }
         else
         {
-            textObject.SetActive(false);
+
+            if (collision != null && collision.tag != "Untagged")
+            {
+
+                switch (collision.tag)
+                {
+                    case ("PickUp"):
+                        if (!holding) text.text = "Press \"E\" to Pickup " + collision.name;
+                        break;
+                    case ("Crate"):
+                        text.text = "Press \"E\" to Dispense " + collision.GetComponent<CrateObject>().crateFood.name;
+                        break;
+                    case ("Pot"):
+                        PotController controller = collision.GetComponent<PotController>();
+                        if (controller.Cooking)
+                        {
+                            string message = "Press \"E\" to Collect ";
+
+                            if (controller.GetCookingTime() <= 1)
+                            {
+                                message += recipeBook.foodItems[controller.currentRecipe.meal].name + " (Under Cooked)";
+                            }
+                            else if (controller.GetCookingTime() <= 2)
+                            {
+                                message += recipeBook.foodItems[controller.currentRecipe.meal].name + " (Cooked)";
+                            }
+                            else if (controller.GetCookingTime() <= 3)
+                            {
+                                message += recipeBook.foodItems[controller.currentRecipe.meal].name + " (Over Cooked)";
+                            }
+                            else
+                            {
+                                message += "Burnt Food";
+                            }
+
+                            text.text = message;
+                        }
+                        else
+                        {
+                            text.text = "Empty Pot! Add Ingredients.";
+                        }
+                        break;
+                    case ("ServingTable"):
+                        text.text = "Drop Item onto Serving Table to Serve.";
+                        break;
+                    case ("Bin"):
+                        text.text = "Drop Item in Bin to Destroy";
+                        break;
+                }
+
+                textObject.SetActive(true);
+            }
+            else
+            {
+                textObject.SetActive(false);
+            }
         }
     }
 
