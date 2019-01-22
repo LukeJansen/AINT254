@@ -13,8 +13,8 @@ public class RecipeBook {
 
     public RecipeBook()
     {
-        foodCount = 2;
-        mealCount = 3;
+        foodCount = 3;
+        mealCount = 4;
 
         SetUp();
     }
@@ -32,18 +32,23 @@ public class RecipeBook {
     {
         foodItems.Add(new Food("Tomato"));
         foodItems.Add(new Food("Beef"));
+        foodItems.Add(new Food("Fish"));
         foodItems.Add(new Food("Tomato Soup"));
         foodItems.Add(new Food("Cooked Beef"));
+        foodItems.Add(new Food("Cooked Fish"));
         foodItems.Add(new Food("Burnt Food"));
     }
 
     void CreateRecipes()
     {
         tempIngredients = new Dictionary<string, int> { { foodItems[0].name, 1 } };
-        recipeItems.Add(new Recipe(tempIngredients, 10, 2));
+        recipeItems.Add(new Recipe(tempIngredients, 10, 3));
 
         tempIngredients = new Dictionary<string, int> { { foodItems[1].name, 1 } };
-        recipeItems.Add(new Recipe(tempIngredients, 15, 3));
+        recipeItems.Add(new Recipe(tempIngredients, 15, 4));
+
+        tempIngredients = new Dictionary<string, int> { { foodItems[2].name, 1 } };
+        recipeItems.Add(new Recipe(tempIngredients, 15, 5));
     }
     
     public int RecipeCheck(Dictionary<string, int> potContents)

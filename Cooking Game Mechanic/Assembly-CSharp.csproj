@@ -77,6 +77,7 @@
     <Compile Include="Assets\Game Assets\Scripts\Request.cs" />
     <Compile Include="Assets\Game Assets\Scripts\ScoreboardBehaviour.cs" />
     <Compile Include="Assets\Game Assets\Scripts\ServingBehaviour.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\TimerBehaviour.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/ljansen/Documents/GitHub/AINT254/Cooking Game Mechanic/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

@@ -25,16 +25,15 @@ public class ServingBehaviour : MonoBehaviour {
         startTime = Time.time;
         lastTime = Time.time;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         if ((Time.time - startTime) > 5)
         {
             orderLimit = Mathf.FloorToInt(((Time.time - startTime) - 5) / 45f) + 1;
         }
         else orderLimit = 0;
 
-        
         ManageOrders();
         if (currentOrder != null)
         {
