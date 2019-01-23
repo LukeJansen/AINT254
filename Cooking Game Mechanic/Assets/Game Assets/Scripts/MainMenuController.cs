@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour {
 
-    public GameObject settingsPanel;
+    public GameObject settingsPanel, helpPanel;
     public Slider volumeSlider, mouseSlider;
     public DataHolder data;
 
 
-    private bool settingsOpen;
+    private bool settingsOpen, helpOpen;
 
     void Start()
     {
@@ -44,6 +44,20 @@ public class MainMenuController : MonoBehaviour {
         data.Mouse = mouseSlider.value;
         
         settingsPanel.SetActive(false);
+    }
+
+    public void HelpButton()
+    {
+        helpOpen = true;
+
+        helpPanel.SetActive(true);
+    }
+
+    public void CloseHelpButton()
+    {
+        helpOpen = false;
+
+        helpPanel.SetActive(false);
     }
 
     public void ExitButton()

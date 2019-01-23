@@ -133,7 +133,7 @@ public class InteractBehaviour : MonoBehaviour {
                         }
                         else
                         {
-                            text.text = "Empty Pot! Add Ingredients.";
+                            text.text = "No Recipe Matched! Add Ingredients.";
                         }
                         break;
                     case ("ServingTable"):

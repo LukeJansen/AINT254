@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DataHolder : MonoBehaviour {
 
-    public float volume, mouse;
+    private float volume, mouse, score;
 
-    public bool setup;
+    private bool setup;
 
     private void Awake()
     {
@@ -24,6 +24,7 @@ public class DataHolder : MonoBehaviour {
     {
         volume = 1f;
         mouse = 200f;
+        score = 0;
     }
 
     public float Volume
@@ -49,6 +50,19 @@ public class DataHolder : MonoBehaviour {
         set
         {
             mouse = value;
+        }
+    }
+
+    public float Score
+    {
+        get
+        {
+            return score;
+        }
+
+        set
+        {
+            score = value;
         }
     }
 

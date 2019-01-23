@@ -2174,6 +2174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1119459042a8cd44ab63f0d4bc235057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLeft: 180
+  startTime: 0
+  score: {fileID: 137531639}
 --- !u!114 &1789901036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2206,7 +2209,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Time Left: 3:10'
+  m_Text: Starting In 10
 --- !u!222 &1789901037
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -22,4 +22,12 @@ public class ScoreboardBehaviour : MonoBehaviour {
 
         text.text = "Score: " + score;
     }
+
+    public int Score
+    {
+        get
+        {
+            return score;
+        }
+    }
 }
