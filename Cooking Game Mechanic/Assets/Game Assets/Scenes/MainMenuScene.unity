@@ -487,11 +487,11 @@ MonoBehaviour:
 
     Try and collect the meal while the indicator is green!
 
-    Pick up the meal (E) from the pot and take it over to the serving tables opposite.
-    Drop the meal at the corresponding serving table.
+    Pick up the meal (E) from the pot and take it over to the tables opposite. Drop
+    the meal at the corresponding table.
 
 
-    Make sure to check the serving tables for what meals customers want!
+    Make sure to check the tables for what meals customers want!
 
     Be careful because customers will only wait a certain amount of time before leaving
     and over time more customers will arrive!'
@@ -2280,7 +2280,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:

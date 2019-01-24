@@ -3,14 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Class to hold all the recipes and food items for the game.
 public class RecipeBook {
 
+    // Variable to hold the food items.
     public List<Food> foodItems;
+    // Variable to hold the recipe items.
     public List<Recipe> recipeItems;
+    // Variables to hold a count of food and meals.
     public int foodCount, mealCount;
 
+    // Variable to hold temp ingredients while creating recipes.
     private Dictionary<string, int> tempIngredients;
 
+    // Class constructor.
     public RecipeBook()
     {
         foodCount = 3;
@@ -19,15 +25,20 @@ public class RecipeBook {
         SetUp();
     }
 
+    // Function to setup the class.
     private void SetUp()
     {
+        // Initialise the lists.
         foodItems = new List<Food>();
         recipeItems = new List<Recipe>();
 
+        // Creates all the food objects.
         CreateFood();
+        // Creates all the recipes.
         CreateRecipes();
     }
 
+    // Function to create all of the food objects and add them to the list.
     void CreateFood()
     {
         foodItems.Add(new Food("Tomato"));
@@ -39,20 +50,23 @@ public class RecipeBook {
         foodItems.Add(new Food("Burnt Food"));
     }
 
+    // Function to create all the recipes and add them to the list.
     void CreateRecipes()
     {
         tempIngredients = new Dictionary<string, int> { { foodItems[0].name, 2 } };
-        recipeItems.Add(new Recipe(tempIngredients, 10, 3));
+        recipeItems.Add(new Recipe(tempIngredients, 5, 3));
 
         tempIngredients = new Dictionary<string, int> { { foodItems[1].name, 1 } };
-        recipeItems.Add(new Recipe(tempIngredients, 15, 4));
+        recipeItems.Add(new Recipe(tempIngredients, 10, 4));
 
         tempIngredients = new Dictionary<string, int> { { foodItems[2].name, 1 } };
-        recipeItems.Add(new Recipe(tempIngredients, 15, 5));
+        recipeItems.Add(new Recipe(tempIngredients, 10, 5));
     }
     
+    // Function to check a recipe against the pot contents.
     public int RecipeCheck(Dictionary<string, int> potContents)
     {
+        // Loops through all of the recipes and compares the pot contents to the recipes needed ingredients, if it matches return the index of the recipe.
         for (int i = 0; i < recipeItems.Count; i++)
         {
             string name = new List<string>(recipeItems[i].ingredients.Keys)[0];
@@ -62,6 +76,7 @@ public class RecipeBook {
                 return i;
             }
         }
+        // If no match return invalid option.
         return 100;
     }
 }

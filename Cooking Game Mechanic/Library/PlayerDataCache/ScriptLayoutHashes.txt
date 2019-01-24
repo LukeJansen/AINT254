@@ -1,12 +1,12 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/ljansen/Desktop/Cooking Mechanic Demo/Cooking Mechanic Demo.exe
+C:/Users/lpjan/Desktop/AINT254 Hand-In/Cooking Time/Cooking Time.exe
 SceneListBegin?
 Assets/Game Assets/Scenes/MainMenuScene.unity
 Assets/Game Assets/Scenes/GameScene.unity
 Assets/Game Assets/Scenes/GameOverScene.unity
 SceneListEnd?
-70cf1b10108b8263a54744a6b95e74ca Assembly-CSharp.dll:.PlayerController
+3ccec094ed356874de34e2701168376b Assembly-CSharp.dll:.PlayerController
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 cf455f7a806648c6ed4c7d3e3f8a0e03 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 13bdb7c23815c33a33b37b0ba8dd39be UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -19,7 +19,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 30afa8783a8bbee2e465ec9ce1efaee2 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 30afa8783a8bbee2e465ec9ce1efaee2 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 607d64d2c4bc76ac9876e6f7b9cc7edf UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-9fe75632b0cac77309c4d3fa6c442090 Assembly-CSharp.dll:.TimerBehaviour
+153ca4db7197d43b6b2369665b1a60f5 Assembly-CSharp.dll:.TimerBehaviour
 97f4064e26e09c9381ee63b6684d6ea2 Assembly-CSharp.dll:.FoodBehaviour
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -120,8 +120,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
-1d8334c4874ea9e6a865844f365ea003 Assembly-CSharp.dll:.ServingBehaviour
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BinBehaviour
+e6e5f4d845635b63fbe45feed9cb7253 Assembly-CSharp.dll:.ServingBehaviour
 8e13c39c711251eda306b9e0d0377e5f Assembly-CSharp.dll:.PotController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ScoreboardBehaviour
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -149,6 +148,7 @@ e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.RotateBehaviour
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -157,8 +157,8 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 b8ac1aa319774fba6d582bc53de97b90 Assembly-CSharp.dll:.CrateObject
 99fbf55af01b9f4d234260d0746b067e Assembly-CSharp.dll:.MealBehaviour
+650c1e412dac0323d37ae3023565f947 Assembly-CSharp.dll:.GameOverController
 a9ba21dd5a362b8ce39bebabcf63f18c Assembly-CSharp.dll:.InteractBehaviour
 2a93d9b227a21109ce6cd8217084f751 Assembly-CSharp.dll:.MainMenuController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DataHolder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Request
-650c1e412dac0323d37ae3023565f947 Assembly-CSharp.dll:.GameOverController
